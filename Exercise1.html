@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weight Check</title>
+</head>
+<body>
+
+    <center>
+        <h1>Luggage Weighing Check</h1>
+        <input id="weightInput" type="text" placeholder="Enter weight in kg" />
+        <button onclick="checkWeight()">Submit</button>
+        <div id="result">Result: </div>
+    </center>
+
+    <script>
+        function checkWeight() {
+            const weight = parseFloat(document.getElementById('weightInput').value);
+            const result = document.getElementById('result');
+
+            if (isNaN(weight)) {
+                result.textContent = "Please enter a valid weight in kg";
+                result.style.color = "red";
+                return;
+            }
+
+            if (weight > 15) {
+                result.textContent = "Overweight";
+                result.style.color = "red";
+            } else {
+                result.textContent = "Correct weight";
+                result.style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+</html>
