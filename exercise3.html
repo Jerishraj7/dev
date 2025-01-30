@@ -6,37 +6,35 @@
     <title>Find Sum of Multiples</title>
     <script>
         function sum(){
-            const a = parseInt(document.getElementById('A').value);
-            const b = parseInt(document.getElementById('B').value);
-            const n = parseInt(document.getElementById('N').value);
+            const a = parseInt(document.getElementById('A').value, 10);
+            const b = parseInt(document.getElementById('B').value, 10);
+            const n = parseInt(document.getElementById('N').value, 10);
              
-                let sum = 0;
-                for(let i = 0; i < n; i++){
-                    
-                    if (i % a === 0 || i % b === 0){
-                        sum = sum + i;
-                        
-                    }
+            let sum = 0;
+            for(let i = 0; i < n; i++){
+                if (i % a === 0 || i % b === 0){
+                    sum += i;
                 }
-            alert(The sum of all multiples of ${a} or ${b} below ${n} is ${sum});   
+            }
+            alert(`The sum of all multiples of ${a} or ${b} below ${n} is ${sum}`);
         }
     </script>
 </head>
 <body>
     <div>
-        <lable>A:</lable>
-        <input id = "A">
+        <label>A:</label>
+        <input id="A" type="number">
     </div>
     <div>
-        <lable>B:</lable>
-        <input id = "B">
+        <label>B:</label>
+        <input id="B" type="number">
     </div>
     <div>
-        <lable>N:</lable>
-        <input id = "N">
+        <label>N:</label>
+        <input id="N" type="number">
     </div>
     <div>
-        <button onclick = "sum()">Caluculate</button>
+        <button onclick="sum()">Calculate</button>
     </div>
 </body>
 </html>
