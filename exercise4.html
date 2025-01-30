@@ -4,17 +4,7 @@
     <title>Sum of Multiples</title>
 </head>
 <body>
-    <label for="a">Enter a:</label>
-    <input type="number" id="a">
-    <br>
-    <label for="b">Enter b:</label>
-    <input type="number" id="b">
-    <br>
-    <label for="l">Enter limit (l):</label>
-    <input type="number" id="l" style="width: 200px;">
-    <br>
-    <button onclick="calculateSum()">Calculate Sum</button>
-    
+
     <script>
         function calculateSum() {
             let a = parseInt(document.getElementById("a").value);
@@ -36,5 +26,18 @@
             alert("The sum of multiples is: " + sum);
         }
     </script>
+
+    <label for="a"> A:</label>
+    <input type="number" id="a">
+    <br>
+    <label for="b"> B:</label>
+    <input type="number" id="b">
+    <br>
+    <label for="l">Enter limit l:</label>
+    <input type="number" id="l" style="width: 200px;">
+    <br>
+    <button onclick="calculateSum()">Calculate Sum</button>
+    
+    
 </body>
 </html>
