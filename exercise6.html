@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Multiples</title>
+</head>
+<body>
+    <h1>Find Sum of Multiples</h1>
+
+    <label>Enter factors (comma-separated):</label>
+    <input type="text" id="a" placeholder="Enter array a (comma separated)">
+    <br>
+
+    <label>Enter list of numbers (comma-separated):</label>
+    <input type="text" id="l" placeholder="Enter array l (comma separated)">
+    <br>
+    <button onclick="mapNums()">Press me!</button>
+
+    <script>
+        function f6(a, l) {
+            let sum = 0;
+            for (let factor of a) {
+                for (let num of l) {
+                    if (num % factor === 0) {
+                        sum += num;
+                    }
+                }
+            }
+            return sum;
+        }
+
+        function mapNums() {
+            const a = document.getElementById('a').value.split(',').map(Number);
+            const l = document.getElementById('l').value.split(',').map(Number);
+            const result = f6(a, l);
+            alert(result);
+        }
+    </script>
+</body>
+</html>
