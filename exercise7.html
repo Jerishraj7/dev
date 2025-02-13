@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Basket</title>
+</head>
+<body>
+    <label>Banana</label>
+    <input id="a" size="50">
+    <br>
+    <label>Peach</label>
+    <input id="b" size="50">
+    <br>
+    <label>Apple</label>
+    <input id="c" size="50">
+    <br>
+    <button onclick="quantity()">Calculate Total Cost</button>
+    <p id="output"></p>
+</body>
+
+<script>
+    const basket_price = {
+        F7: function (basket, price) {
+            let totalCost = 0;
+            for (let product in basket) {
+                if (price[product] != undefined) {
+                    totalCost += basket[product] * price[product];
+                }
+            }
+            return totalCost.toFixed(2);  // Round to 2 decimal places
+        }
+    }
+
+    function quantity() {
+        const basket = {
+            Banana: parseFloat(document.getElementById("a").value) || 0, 
+            Peach: parseFloat(document.getElementById("b").value) || 0,  
+            Apple: parseFloat(document.getElementById("c").value) || 0 
+        };
+
+        const price = {
+            Banana: 2.30,
+            Peach: 1.99,
+            Apple: 2.10
+        };
+
+        const result = basket_price.F7(basket, price);
+        document.getElementById("output").textContent = `Total Cost: $${result}`;
+        alert(`Total Cost of products: $${result}`);
+    }
+</script>
+</html>
