@@ -28,16 +28,17 @@
                     totalCost += basket[product] * price[product];
                 }
             }
-            return totalCost.toFixed(2);  // Round to 2 decimal places
+            return totalCost.toFixed(2); 
         }
     }
 
-    function quantity() {
+    function quantity() 
+    {
         const basket = {
             Banana: parseFloat(document.getElementById("a").value) || 0, 
             Peach: parseFloat(document.getElementById("b").value) || 0,  
             Apple: parseFloat(document.getElementById("c").value) || 0 
-        };
+    };
 
         const price = {
             Banana: 2.30,
