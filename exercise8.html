@@ -36,7 +36,7 @@
     <h3>Items in Basket:</h3>
     <ul id="itemList"></ul>
 
-    <h3>Total Cost: $<span id="totalCost">0</span></h3>
+    <h3>Total Cost: €<span id="totalCost">0</span></h3>
 
     <script>
         class Basket {
@@ -55,7 +55,7 @@
                     if (prices[item.product]) {
                         totalCost += prices[item.product] * item.qty;
                     } else {
-                        alert(Price for ${item.product} not found.);
+                        alert(`Price for ${item.product} not found.`);
                     }
                 });
                 return totalCost;
@@ -94,7 +94,7 @@
 
             basket.items.forEach(item => {
                 const listItem = document.createElement('li');
-                listItem.textContent = ${item.qty} x ${item.product};
+                listItem.textContent = `${item.qty} x ${item.product}`;
                 itemList.appendChild(listItem);
             });
         }
